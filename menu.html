@@ -1,8 +1,47 @@
-<html>
-<body>
-	<iframe src="https://front.cjfreshmeal.co.kr/menuinfo?idx=6415" frameborder="0" scrolling="yes" style="height: 100%; width: 49%; float: left; " height="100%" width="49%" align="left"></iframe>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive iFrames</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-	<iframe src="https://www.samsungwelstory.com/menu/seoulrnd/menu.jsp" frameborder="0" scrolling="yes" style="overflow: hidden; height: 100%; width: 49%; " height="100%" width="49%" align="right">
-	</iframe>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+    }
+
+    .container iframe {
+      flex: 1;
+      border: none;
+    }
+
+    @media (max-width: 1600px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .container iframe {
+        height: 50%;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <iframe src="https://front.cjfreshmeal.co.kr/menuinfo?idx=6415" title="Left Page"></iframe>
+    <iframe src="https://www.samsungwelstory.com/menu/seoulrnd/menu.jsp" title="Right Page"></iframe>
+  </div>
 </body>
 </html>
